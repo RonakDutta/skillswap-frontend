@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, AlertCircle } from "lucide-react";
-// import { supabase } from '../lib/supabaseClient';
 
 const Signup = ({ setAuth }) => {
   const navigate = useNavigate();
@@ -50,9 +49,9 @@ const Signup = ({ setAuth }) => {
 
         console.log("User Created:", parseRes);
         alert("Account Created Successfully!");
-        navigate("/login");
+        setAuth(true);
+        navigate("/");
       } else {
-        // Error from server (like "User already exists")
         setError(parseRes);
       }
     } catch (err) {
